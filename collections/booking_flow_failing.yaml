@@ -1,0 +1,11 @@
+# Intentionally failing collection — demonstrates the CI gate (non-zero exit).
+# /ping really returns 201, so asserting 500 forces a FAIL.
+name: CI gate demo (expected to fail)
+
+requests:
+  - name: Ping expects wrong status
+    method: GET
+    url: "{{base_url}}/ping"
+    assert:
+      status: 500
+      max_response_ms: 1

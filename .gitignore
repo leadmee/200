@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Reports / artifacts
+report/
+allure-results/
+allure-report/
+.allure/
+
+# Local-only study material (not part of the repo)
+docs/
+
+# Env / IDE
+.env
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store

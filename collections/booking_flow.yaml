@@ -1,0 +1,89 @@
+name: Booking flow (restful-booker)
+
+requests:
+  - name: Health check
+    method: GET
+    url: "{{base_url}}/ping"
+    assert:
+      status: 201
+      max_response_ms: 6000
+
+  - name: Create auth token
+    method: POST
+    url: "{{base_url}}/auth"
+    headers:
+      Accept: "application/json"
+    body:
+      username: "{{username}}"
+      password: "{{password}}"
+    assert:
+      status: 200
+      max_response_ms: 6000
+      schema: shared/schemas/auth_token.json
+    capture:
+      token: "$.token"
+
+  - name: Create booking
+    method: POST
+    url: "{{base_url}}/booking"
+    headers:
+      Accept: "application/json"
+    body:
+      firstname: "Jim"
+      lastname: "Brown"
+      totalprice: 111
+      depositpaid: true
+      bookingdates:
+        checkin: "2024-01-01"
+        checkout: "2024-01-05"
+      additionalneeds: "Breakfast"
+    assert:
+      status: 200
+      schema: shared/schemas/booking_created.json
+      jsonpath:
+        "$.booking.firstname": "Jim"
+    capture:
+      bookingid: "$.bookingid"
+
+  - name: Get booking by id
+    method: GET
+    url: "{{base_url}}/booking/{{bookingid}}"
+    headers:
+      Accept: "application/json"
+    assert:
+      status: 200
+      max_response_ms: 6000
+      schema: shared/schemas/booking.json
+      jsonpath:
+        "$.firstname": "Jim"
+
+  - name: Update booking (PUT)
+    method: PUT
+    url: "{{base_url}}/booking/{{bookingid}}"
+    headers:
+      Accept: "application/json"
+      Content-Type: "application/json"
+      Cookie: "token={{token}}"
+    body:
+      firstname: "James"
+      lastname: "Brown"
+      totalprice: 200
+      depositpaid: false
+      bookingdates:
+        checkin: "2024-02-01"
+        checkout: "2024-02-10"
+      additionalneeds: "Late checkout"
+    assert:
+      status: 200
+      schema: shared/schemas/booking.json
+      jsonpath:
+        "$.firstname": "James"
+
+  - name: Delete booking
+    method: DELETE
+    url: "{{base_url}}/booking/{{bookingid}}"
+    headers:
+      Content-Type: "application/json"
+      Cookie: "token={{token}}"
+    assert:
+      status: 201

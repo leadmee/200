@@ -1,0 +1,16 @@
+[project]
+name = "api-testing-suite"
+version = "0.1.0"
+description = "HTTP API tester (CLI) + pytest test project for the restful-booker public API"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "smoke: fast checks covering the main happy paths",
+    "negative: negative and boundary scenarios",
+    "regression: broader CRUD regression coverage",
+    "contract: JSON Schema contract validation",
+]

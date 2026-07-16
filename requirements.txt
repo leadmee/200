@@ -1,0 +1,11 @@
+httpx>=0.27
+pydantic>=2.6
+PyYAML>=6.0
+jsonschema>=4.21
+jsonpath-ng>=1.6
+typer>=0.12
+rich>=13.7
+requests>=2.31
+pytest>=8.0
+Faker>=24.0
+allure-pytest>=2.13
