@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/leadmee/200/actions/workflows/ci.yml/badge.svg)](https://github.com/leadmee/200/actions/workflows/ci.yml)
 
+📊 Allure report (published from CI): https://leadmee.github.io/200/ — available once GitHub Pages is enabled (Settings → Pages → source: `gh-pages` branch).
+
 QA Automation portfolio project that combines two deliverables in one repository:
 
 1. **HTTP API tester** — a declarative CLI runner (a Postman/Insomnia-lite). Request
