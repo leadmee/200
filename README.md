@@ -1,6 +1,6 @@
 # API Testing Suite
 
-![CI](https://github.com/<owner>/<repo>/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/leadmee/200/actions/workflows/ci.yml/badge.svg)](https://github.com/leadmee/200/actions/workflows/ci.yml)
 
 QA Automation portfolio project that combines two deliverables in one repository:
 
