@@ -1,0 +1,1 @@
+{"firstname": "Jim", "lastname": "Brown", "totalprice": 1944, "depositpaid": false, "bookingdates": {"checkin": "2026-06-17", "checkout": "2026-07-29"}, "additionalneeds": "Extra bed"}

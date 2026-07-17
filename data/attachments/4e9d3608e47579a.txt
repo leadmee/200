@@ -1,0 +1,1 @@
+{"bookingid":1763,"booking":{"firstname":"Мария","lastname":"Иванова","totalprice":4498,"depositpaid":false,"bookingdates":{"checkin":"2026-06-25","checkout":"2026-07-30"},"additionalneeds":"Late checkout"}}

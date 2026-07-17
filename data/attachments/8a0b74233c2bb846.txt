@@ -1,0 +1,1 @@
+{"bookingid":1768,"booking":{"firstname":"Kimberly","lastname":"Ewing","totalprice":4100,"depositpaid":true,"bookingdates":{"checkin":"2026-07-08","checkout":"2026-07-27"},"additionalneeds":"Extra bed"}}

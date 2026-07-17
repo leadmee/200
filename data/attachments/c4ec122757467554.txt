@@ -1,0 +1,1 @@
+{"bookingid":1771,"booking":{"firstname":"Kevin","lastname":"Baker","totalprice":1241,"depositpaid":true,"bookingdates":{"checkin":"2026-06-17","checkout":"2026-07-19"},"additionalneeds":"Late checkout"}}
