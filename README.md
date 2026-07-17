@@ -45,12 +45,16 @@ non-zero exit code used as a CI gate.
 ### Part B — run the tests
 
 ```bash
-pytest -q                       # everything
+pytest -q                       # everything (live API + offline unit tests)
+pytest -m unit                  # offline unit tests for the tester (no network)
 pytest -m smoke                 # smoke subset
 pytest -m negative              # negative subset
 pytest --alluredir=allure-results
 allure serve allure-results     # open the Allure report (requires Allure CLI)
 ```
+
+Unit tests for the tester itself live in `tests/unit/` and run without touching the
+network (they use a fake HTTP client), so they are safe for fast local runs and CI.
 
 ## Target API
 

@@ -13,4 +13,5 @@ markers = [
     "negative: negative and boundary scenarios",
     "regression: broader CRUD regression coverage",
     "contract: JSON Schema contract validation",
+    "unit: offline unit tests for the apitester tool (no network)",
 ]
